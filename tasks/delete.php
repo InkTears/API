@@ -10,7 +10,7 @@ include_once '../objects/tasks.php';
 $database = new Database();
 $db = $database->getConnection();
 $task = new Task($db);
-$data = json_decode(file_get_contents("php://input"));
+$data->title = $_GET["title"];
 $task->title = $data->title;
 
 if($task->delete())

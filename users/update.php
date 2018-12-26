@@ -10,7 +10,9 @@ include_once '../objects/users.php';
 $database = new Database();
 $db = $database->getConnection();
 $user = new User($db);
-$data = json_decode(file_get_contents("php://input"));
+$data->id = $_GET["id"];
+$data->name = $_GET["name"];
+$data->email = $_GET["email"];
 
 $user->id = $data->id;
 $user->name = $data->name;

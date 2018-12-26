@@ -13,7 +13,10 @@ $db = $database->getConnection();
 
 $task = new Task($db);
 
-$data = json_decode(file_get_contents("php://input"));
+$data->user_id = $_GET["user_id"];
+$data->title = $_GET["title"];
+$data->description = $_GET["description"];
+$data->status = $_GET["status"];
 
 if(!empty($data->user_id) && !empty($data->title) && !empty($data->description) && !empty($data->status))
     {
