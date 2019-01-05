@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^users/?$ users/users.php [NC,L]
+RewriteRule ^user/([0-9]+)/?$ users/users.php?id=$1 [NC,L]
+RewriteRule ^tasks/?$ tasks/tasks.php [NC,L]
+RewriteRule ^task/([0-9]+)/?$ tasks/tasks.php?id=$1 [NC,L]
